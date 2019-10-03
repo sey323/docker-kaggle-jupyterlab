@@ -1,4 +1,4 @@
-version: "3"
+version: "2"
 services:
   jupyter:
     build: .
@@ -7,4 +7,6 @@ services:
     working_dir: /tmp/working
     ports:
       - 8888:8888
+    restart:
+      always
     command: jupyter notebook --ip=0.0.0.0 --allow-root --no-browser
