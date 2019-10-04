@@ -1,12 +1,11 @@
-version: "2"
+version: "2.3"
 services:
-  jupyter:
+  lab:
     build: .
     volumes:
       - $PWD/script:/tmp/working
     working_dir: /tmp/working
     ports:
       - 8888:8888
-    restart:
-      always
-    command: jupyter notebook --ip=0.0.0.0 --allow-root --no-browser
+    command: jupyter lab --ip=0.0.0.0 --allow-root --no-browser --NotebookApp.password='sha1:47db3a1f0f2f:3adbeea3c88bd6a5bab02d5bd6e97b6b891e6ed9'
+    restart: always
