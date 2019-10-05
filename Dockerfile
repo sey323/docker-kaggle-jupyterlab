@@ -4,7 +4,7 @@ FROM nvidia/cuda:9.2-cudnn7-devel-ubuntu18.04
 # 基本的なapt周りのパッケージをインストール
 RUN apt-get update && apt-get upgrade -y
 RUN apt-get install -y --no-install-recommends \
-    sudo git wget cmake nano vim gcc g++ build-essential ca-certificates software-properties-common
+    sudo git wget cmake unzip gcc g++ build-essential ca-certificates software-properties-common
 
 RUN apt-get install -y --no-install-recommends \
     nodejs npm python3 python3-pip
