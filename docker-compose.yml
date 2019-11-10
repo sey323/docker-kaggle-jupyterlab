@@ -2,6 +2,7 @@ version: "2.3"
 services:
   lab:
     build: .
+    user: "${UID}:${GID}"
     volumes:
       - $PWD/script:/tmp/working
     working_dir: /tmp/working
