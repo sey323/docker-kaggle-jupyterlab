@@ -9,3 +9,6 @@ kaggle==1.4.7.1
 matplotlib==2.2.2
 seaborn==0.8.1
 jupyterlab==1.0.0
+lightgbm
+xgboost
+tensorflow-gpu
