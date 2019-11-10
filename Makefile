@@ -2,11 +2,11 @@ NAME=jupyter_kaggle
 
 run:
 	docker-compose build
-	docker-compose run -u "$(id -u $USER):$(id -g $USER)" -d lab
+	docker-compose up -d
 
 gpurun:
-	docker-compose build docker-compose-gpu.yml
-	docker-compose run -u "$(id -u $USER):$(id -g $USER)" -d lab
+	docker-compose build
+	docker-compose -f docker-compose-gpu.yml up -d
 
 stop:
 	docker stop ${NAME}_lab_1
