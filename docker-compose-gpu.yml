@@ -2,7 +2,6 @@ version: "2.3"
 services:
   lab:
     build: .
-    user: $(id -u $USER):$(id -g $USER)
     volumes:
       - $PWD/script:/tmp/working
       - /etc/group:/etc/group:ro
