@@ -18,3 +18,9 @@ RUN ldconfig \
 # pythonの必要なライブラリをインストールする
 COPY ./requirements.txt /tmp
 RUN pip3 install setuptools -U && pip3 install -r /tmp/requirements.txt
+
+# ユーザを作成
+RUN export uid=1000 gid=1000 && \
+    echo "kaggle_user:x:${uid}:${gid}:kaggle_user,,,::/bin/bash" >> /etc/passwd && \
+    echo "kaggle_user:x:${uid}:" >> /etc/group
+USER kaggle_user
