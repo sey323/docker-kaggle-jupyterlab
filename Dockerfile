@@ -18,3 +18,14 @@ RUN ldconfig \
 # pythonの必要なライブラリをインストールする
 COPY ./requirements.txt /tmp
 RUN pip3 install setuptools -U && pip3 install -r /tmp/requirements.txt
+
+## JupyterLabの拡張機能
+
+# 変数や行列の中身を確認
+RUN jupyter labextension install @lckr/jupyterlab_variableinspector
+
+# 自動整形
+RUN pip install autopep8 \
+    && pip install jupyterlab_code_formatter \
+    && jupyter labextension install @ryantam626/jupyterlab_code_formatter \
+    && jupyter serverextension enable --py jupyterlab_code_formatter
