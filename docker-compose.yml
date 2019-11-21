@@ -7,5 +7,5 @@ services:
     working_dir: /tmp/working
     ports:
       - 8888:8888
-    command: jupyter lab --ip=0.0.0.0 --allow-root --no-browser --NotebookApp.password='sha1:47db3a1f0f2f:3adbeea3c88bd6a5bab02d5bd6e97b6b891e6ed9'
+    command: jupyter lab --allow-root --no-browser --NotebookApp.disable_check_xsrf=True --NotebookApp.password='sha1:47db3a1f0f2f:3adbeea3c88bd6a5bab02d5bd6e97b6b891e6ed9'
     restart: always
