@@ -3,7 +3,8 @@ services:
   lab:
     build: .
     volumes:
-      - $PWD/script:/tmp/working
+      - $PWD/script:/tmp/working/scripts
+      - $SAVE_FOLDER/script:/tmp/deepvision
     working_dir: /tmp/working
     runtime: nvidia
     ports:
