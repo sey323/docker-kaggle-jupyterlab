@@ -1,4 +1,4 @@
-NAME=jupyter_kaggle
+NAME=docker-kaggle-jupyterlab
 
 run:
 	docker-compose build
@@ -9,11 +9,11 @@ gpurun:
 	docker-compose -f docker-compose-gpu.yml up -d
 
 stop:
-	docker stop ${NAME}_lab_1
-	docker rm -f ${NAME}_lab_1
+	docker stop ${NAME}
+	docker rm -f ${NAME}
 
 log:
 	docker-compose logs
 
 in:
-	docker exec -it ${NAME}_lab_1 /bin/sh
+	docker exec -it ${NAME} /bin/bash

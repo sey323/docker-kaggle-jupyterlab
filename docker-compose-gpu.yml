@@ -2,6 +2,7 @@ version: "2.3"
 services:
   lab:
     build: .
+    container_name: docker-kaggle-jupyterlab
     volumes:
       - $PWD/script:/tmp/working/scripts
       - ${SAVE_FOLDER}:/tmp/working/deepvision
